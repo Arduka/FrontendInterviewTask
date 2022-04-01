@@ -16,7 +16,7 @@ const http = function(protoOptions) {
         headers: {} //请求头部
     }
     var options = {}
-    for(let key in protoOptions){
+    for(let key in defaultVal){
         options[key] = protoOptions[key] || defaultVal[key]
     }
 
@@ -28,7 +28,7 @@ const http = function(protoOptions) {
             query = '?' + encodeURI(formatData(options.data))
         }
     }else{
-        if(regex.test(options.headers['content-type'])){
+        if(options.headers['content-type'] && regex.test(options.headers['content-type'])){
             if (options.params) {
                 param = formatData(options.params)
             }
@@ -55,11 +55,6 @@ const http = function(protoOptions) {
 
         xhr.open(method, method === 'post' ? url : url +  query, async)
 
-        // if(options.method==='post'){
-        //     // 默认post发送json数据
-        //     xhr.setRequestHeader('content-type', 'application/json;charset=utf-8')
-        // }
-
         if(param instanceof FormData){
             // formData数据不设置content-type
         }else if(param instanceof String){
@@ -74,6 +69,21 @@ const http = function(protoOptions) {
                 continue
             }
             xhr.setRequestHeader(key, options.headers[key])
+        }
+
+        xhr.send(param)
+
+        xhr.onreadystatechange = function() {
+            // 判断xhr的状态码
+            if (xhr.readyState === 4 ) {
+              if (xhr.status === 200) {
+                // 成功时 接收返回的内容
+                resolve(xhr.responseText)
+              } else {
+                // 失败时 接收返回的内容
+                reject(xhr.responseText)
+              }
+            }
         }
     })
 }

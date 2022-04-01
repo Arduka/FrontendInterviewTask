@@ -32,5 +32,6 @@ export default {
 <style>
 ul>li {
   list-style: none;
+  font-size: 30px;
 }
 </style>
