@@ -3,8 +3,11 @@ import App from './App.vue'
 import router from './router'
 import '../mock/mock.js'
 import './utils/mdpi'
+import JsonViewer from 'vue-json-viewer'
 
 Vue.config.productionTip = false
+
+Vue.use(JsonViewer)
 
 router.beforeEach((to, from, next) => {
     if (to.meta.title) {
