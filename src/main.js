@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import '../mock/mock.js'
-import './utils/mdpi'
+// import './utils/mdpi'
 import JsonViewer from 'vue-json-viewer'
+import './style/global.css'
 
 Vue.config.productionTip = false
 

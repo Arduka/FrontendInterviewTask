@@ -17,7 +17,7 @@ export default {
 
     data() {
         return {
-            jsonData:null
+            jsonData:{}
         };
     },
 

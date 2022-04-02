@@ -1,0 +1,94 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,html,img,legend,li,ol,p,ul,li,div {
+    margin: 0;
+    padding: 0;
+    /* font-family: Microsoft YaHei; */
+}
+
+body {
+    color: #333;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a img,fieldset {
+    border: 0;
+}
+
+em,i {
+    font-style: normal;
+}
+
+b,h1,h2,h3,h4,h5,h6,strong,th {
+    font-weight: 100;
+}
+
+button,input,select,textarea {
+    outline: none;
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.cu {
+    cursor: pointer;
+}
+
+.over {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.czdq {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.ind2 {
+    text-indent: 2em;
+}
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+.clearfix { zoom:1 }
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
